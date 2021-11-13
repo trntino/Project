@@ -32,3 +32,7 @@ For this we take us on the A9, A61, A62, A66, A75 and A709 motorways.
 + Documentation
 
 + Beamer
+
+## Tasks distribution
+
+---- 
