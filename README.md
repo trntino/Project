@@ -31,6 +31,7 @@ The main objective of this project will be to create a clickable map of the moto
 
 + Beamer
 
+<<<<<<< HEAD
 
 ## Role
 
@@ -43,3 +44,8 @@ The main objective of this project will be to create a clickable map of the moto
 
 
 
+=======
+## Tasks distribution
+
+---- 
+>>>>>>> c732a5f3a43878054bfb6397cad4cc2aac4d5f45
