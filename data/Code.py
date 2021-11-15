@@ -52,7 +52,7 @@ for i in range (len(GPS)):
     r = requests.get(f"http://router.project-osrm.org/route/v1/car/{x},{y};{x1},{y1}?overview=false""")
     routes = json.loads(r.content)
     route_1 = routes.get("routes")[0]
-    dist.append(round(route_1['distance']/1000))
+    dist.append(route_1['distance']/1000)
 print(dist)
 
 
