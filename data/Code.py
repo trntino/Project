@@ -1,23 +1,15 @@
 #%%
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
-#import alphashape
-#from descartes import PolygonPatch
 import folium
 import geopandas as gpd
-#from geopy.geocoders import Nominatim
-#from ipywidgets import interact, fixed, widgets
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 import osmnx as ox
 import pandas as pd
 from shapely import geometry
-#from pyroutelib3 import Router
 from pyproj import Proj, transform
-#import seaborn as sns
-#from ipywidgets import interact  # widget manipulation
-#from download import download  # download data / avoid redownloading
 pd.options.display.max_rows = 8
 
 #%%
@@ -46,6 +38,7 @@ for i in range (len(data_route)):
 
 
 # %%
+# Calcul des distances entre chaque gares de péages
 import requests
 import json
 dist=[]
