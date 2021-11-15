@@ -17,6 +17,7 @@ pd.options.display.max_rows = 8
 df = pd.read_csv('gares-peage-2019.csv', sep=";")
 df
 
+
 #%%
 #Extraction des données relatives aux autoroutes A9,A709,A61,A62,A75 et A66
 data_route=df[(df.route=="A0009") | (df.route=="A0061") | (df.route=="A0062") | (df.route=="A0066") | (df.route=="A0075") | (df.route=="A0709")]
@@ -56,4 +57,8 @@ for i in range (len(GPS)):
 print(dist)
 
 
+# %%
+#Dataframe des prix entre chaque gares de péages
+dp = pd.read_csv('price.csv', sep=";")
+dp
 # %%
