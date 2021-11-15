@@ -35,9 +35,9 @@ The main objective of this project will be to create a clickable map of the moto
 ## Role
 
 ---
-+ Quentin Fontana : repository and branches, Code, Beamer
++ Quentin Fontana : Code, Beamer
 
-+ Niasse Gueladio : Data cleaning, Documentation
++ Niasse Gueladio : Data cleaning, Documentation, Git aspects
 
 + El Khmissi Mohamed : Visualisation, Test
 
