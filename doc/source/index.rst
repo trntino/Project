@@ -13,6 +13,14 @@ Welcome to ASF's documentation!
    Problem/ASF
 
 
+===============
+
+.. toctree::
+   :maxdepth:
+   :Caption: Contacts and sources
+
+   contact_sources/Contact
+   contact_sources/Sources
 
 Indices and tables
 ==================
