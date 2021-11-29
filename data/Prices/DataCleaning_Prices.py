@@ -37,6 +37,9 @@ dpp = dp.drop(columns,axis=1)
 prices = dpp.drop(index=[0,1,2,3,4,5,17,18,29,30,33,35,36,37,38,39,40,41,42])
 
 #%%
+#Reinitialisation des index
+prices.set_index(' ', inplace=True)
+#%%
 #Exportation du DataFrame nettoie
 prices.to_csv('DataFrame_Prices.csv')
 
