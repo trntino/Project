@@ -13,8 +13,6 @@ Welcome to ASF's documentation!
    Problem/ASF
 
 
-===============
-
 .. toctree::
    :maxdepth:
    :Caption: Contacts and sources
