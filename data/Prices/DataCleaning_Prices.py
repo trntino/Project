@@ -34,11 +34,12 @@ dpp = dp.drop(columns,axis=1)
 
 #%% 
 #DataCleaning sur les lignes
-dpp.drop(index=[0,1,2,3,4,5,17,18,29,30,33,35,36,37,38,39,40,41,42])
+prices = dpp.drop(index=[0,1,2,3,4,5,17,18,29,30,33,35,36,37,38,39,40,41,42])
 
 #%%
 #Exportation du DataFrame nettoie
-dpp.to_csv('DataFrame_Prix.csv')
+prices.to_csv('DataFrame_Prices.csv')
+
 
 
 # %%
