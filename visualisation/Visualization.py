@@ -79,7 +79,7 @@ class graphique:
         dist=float(round(res['routes'][0]['summary']['distance']/1000,1))
         return dist
 
-#%%
+
         for i in range(nb_points-2):
 
             coords=((coord["X"][dep+1+i],coord["Y"][dep+1+i]),(coord["X"][dep+2+i],coord["Y"][dep+2+i]))
