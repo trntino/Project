@@ -9,19 +9,21 @@ Welcome to ASF's documentation!
 This package was created as part of the software development course. The objective is to explain the operation of this package and the functions it uses.
 
 
+
+
 .. toctree::
    :maxdepth: 2
-   :caption: Object of ASF 
+   :caption: Ojective of ASF 
 
-   objectif/objectif
+   Problem/objectif
 
 
 .. toctree::
    :maxdepth: 2
    :Caption: Contacts and sources
 
-   contact_sources/Contact
-   contact_sources/Sources
+   contact_sources/contact
+   contact_sources/sources
 
 
 Indices and tables
