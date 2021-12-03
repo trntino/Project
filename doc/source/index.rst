@@ -6,11 +6,14 @@
 Welcome to ASF's documentation!
 =========================================
 
+This package was created as part of the software development course. The objective is to explain the operation of this package and the functions it uses.
+
+
 .. toctree::
    :maxdepth: 2
-   :caption: Handling of a dataset of the French road company
+   :caption: Object of ASF 
 
-   objectif/objectif.rst
+   objectif/objectif
 
 
 .. toctree::
@@ -18,14 +21,7 @@ Welcome to ASF's documentation!
    :Caption: Contacts and sources
 
    contact_sources/Contact
-
    contact_sources/Sources
-
-.. toctree ::
-    :maxdepth: 2
-    :caption: Prévisions :
-   
-   _auto_scripts/index
 
 
 Indices and tables
