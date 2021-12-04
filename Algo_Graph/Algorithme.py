@@ -25,10 +25,19 @@ P5 = df.iloc[31:43,:]
 P5 = P5.reset_index()
 
 #%%
+#Exemple de partitionnement
+P5
+
+
+#%%
 #Groupement des partitions
-V1 = [P1,P2]
+V1 = pd.concat([P1,P2])
 V2 = P3
-V3 = [P4,P5]
+V3 = pd.concat([P4,P5])
+
+#%%
+#Exemple de groupe
+V3
 
 #%%
 #Associe la gare a sa partition
@@ -45,6 +54,10 @@ def partition_gare(i):
         return P5
 
 #%%
+#test 
+partition_gare(35)
+
+#%%
 #Associe la gare au nom de sa partition
 def nom_partition_gare(i):
     if i>=0 and i<=11 :
@@ -58,6 +71,8 @@ def nom_partition_gare(i):
     if i>=31 and i<=42 :
         return "P5"
 
+#%%
+nom_partition_gare(35)
 
 #%%
 #Associe la partition a son groupement
@@ -70,6 +85,9 @@ def groupe_de_la_partition(i):
         return V2
 
 #%%
+groupe_de_la_partition(35)
+
+#%%
 #Associe la partition au nom de son groupement
 def nom_groupe_partition(i):
     if nom_partition_gare(i) == "P1" or nom_partition_gare(i) == "P2" :
@@ -79,7 +97,8 @@ def nom_groupe_partition(i):
     else :
         return "V2"
 
-
+#%%
+nom_groupe_partition(35)
 
 
 #%%
@@ -87,6 +106,8 @@ def nom_groupe_partition(i):
 def nb_de_gare_partition(i):
     return len(partition_gare(i))
 
+#%%
+nb_de_gare_partition(35)
 
 
 
@@ -128,6 +149,10 @@ def nb_de_gare_sur_trajet(i,j):
                         if nom_groupe_partition(i)=="V3":
                             return (partition_gare(j)[partition_gare(j)['index']==j].index.values.astype(int)[0]-nb_de_gare_partition(23)) + partition_gare(i)[partition_gare(i)['index']==i].index.values.astype(int)[0]
                 
+#%%
+nb_de_gare_sur_trajet(35,3)
+
+
 
 
 # %%
@@ -196,30 +221,69 @@ def tab_algo(i,j):
                         DF1 = df1.sort_index(axis=0,ascending = False)
                         return pd.concat([DF1,df2])
 
+#%%
+tab_algo(3,35)
+
+
+
+#%%
+def index_gare(dataframe,gare):
+    data_gare = dataframe[dataframe["NOMGARE"]==gare]
+    index = int(data_gare["index"])
+    return index
+
+#%%
+index_gare(df,'Vendargues')
+
 
 
 #%%
 #renvoi le nom de la gare en fonction de son index
 def nom_gare(dataframe,i):
-
     return str(dataframe["NOMGARE"][i])  
+
+#%%
+nom_gare(df,35)
+
+
+#%%
+def Le_Trajet(dataframe):
+    tab = dataframe[["index","ROUTE","NOMGARE","X","Y"]]
+    tab = tab.reset_index()
+    return tab
+
+#%%
+Le_Trajet(tab_algo(3,35))
+
+#%%
+tab = Le_Trajet(tab_algo(3,35))
+gare = nom_gare(df,35)
+index_gare(tab,gare)
+index_gare(Le_Trajet(tab_algo(3,35)),nom_gare(df,35))
 
 
 #%%
 #renvoi le cout minimum entre pour le trajet de i a j
-def cout_minimum(dataframe,i,j) :
+def cout_minimum(tab_ord_gares,dep,arr) :
 
-    min_cout=float(dp[nom_gare(dataframe,i)][j])
+    min_cout=float(dp[nom_gare(tab_ord_gares,dep)][index_gare(df,nom_gare(tab_ord_gares,arr))])
 
-    for l in range(j):
-        cout = 0
-        cout = float(dp[nom_gare(dataframe,i)][l]) + float(dp[nom_gare(dataframe,l)][j])
+    for l in range(arr):
+        
+        cout = float(dp[nom_gare(tab_ord_gares,dep)][index_gare(df,nom_gare(tab_ord_gares,l))]) + float(dp[nom_gare(tab_ord_gares,l)][index_gare(df,nom_gare(tab_ord_gares,arr))])
 
         if cout < min_cout :
             min_cout = cout
-            sortie = nom_gare(dataframe,l)
+            sortie = nom_gare(tab_ord_gares,l)
                 
     return "Si vous sortez a " + sortie + " le prix de votre trajet est de " + str(min_cout) + " €"
+
+#%%
+cout_minimum(df,3,9)
+#%%
+cout_minimum(Le_Trajet(tab_algo(3,35)),0,16)
+#%%
+
 
 
 
@@ -234,30 +298,26 @@ def chemin_moins_cher(i,j,k):
         return "Choisissez un nombre de noeuds inferieur ou egal a : " + str(nb_de_noeuds_possible) 
 
     else :
-        data = tab_algo(i,j)
-        trajet = data[["ROUTE","NOMGARE","X","Y"]]
-        trajet = trajet.reset_index()
-        del trajet["index"]
-
-        depart_index = 0
-        arrivee_index = nb_de_gare_sur_trajet(i,j)+1
         
-        if k==0 :
-            return "Le prix de votre trajet est de : " + str(dp[nom_gare(trajet,depart_index)][arrivee_index]) + " €"
+        data = tab_algo(i,j)
+        trajet = Le_Trajet(data)
+        
+        depart_index = 0
+        if nom_partition_gare(i)== nom_partition_gare(j) :
+            arrivee_index = nb_de_gare_sur_trajet(i,j)
+        else :
+            arrivee_index = nb_de_gare_sur_trajet(i,j) +1
 
-        if k==1 :
+        
+        if nb_de_noeuds_souhaite == 0 :
+            return "Le prix de votre trajet est de : " + str(dp[nom_gare(trajet,depart_index)][index_gare(df,nom_gare(trajet,arrivee_index))]) + " €"
+
+        else :
             return cout_minimum(trajet,depart_index,arrivee_index)
         
 
-
-
-
-        
-            
-        
-        
-    
-
-    
-
+# %%
+chemin_moins_cher(3,23,1)
+# %%
+chemin_moins_cher(3,9,0)
 # %%

@@ -71,7 +71,7 @@ class graphique:
 
 #%%
 #Exemple de trajet
-graphique.graph_rang(20,26,df)
+graphique.graph_rang(3,16,df)
 
 
 
