@@ -1,4 +1,5 @@
 #%%
+from os import sep
 import numpy as np
 import pandas as pd
 
@@ -346,6 +347,8 @@ def liste_des_tuples(p,n):
             list_tuple.extend([a])
     return list_tuple
 
+#%%
+liste_des_tuples(2,5)
 
 
 #%%
@@ -364,12 +367,13 @@ def suite_de_trajet(p,n):
     
     return suite_tuple
 
-
+#%%
+suite_de_trajet(3,5)
 
 # %%
 def cout_minimum_tuple(i,j,k,tab_ord_gares) :
-    n = nb_de_gare_sur_trajet(i,j)+2
-    trajets = suite_de_trajet(k+2,n)
+    n = nb_de_gare_sur_trajet(i,j)
+    trajets = suite_de_trajet(k,n)
     min_cout=float(dp[nom_gare(tab_ord_gares,i)][index_gare(df,nom_gare(tab_ord_gares,j))])
 
     for l in range(len(trajets)):
@@ -377,31 +381,38 @@ def cout_minimum_tuple(i,j,k,tab_ord_gares) :
         t = trajets[l]
         cout_t = 0
         sorties = []
-        
+        prix = []
+
         for a in range(len(t)):
             
             s = t[a]
             cout1 = float(dp[nom_gare(tab_ord_gares,s[0])][index_gare(df,nom_gare(tab_ord_gares,s[1]))]) 
             cout_t = cout_t + cout1 
-            
+            prix.extend([cout1])
+
             if a < (len(t)-1):
                 gare = [nom_gare(tab_ord_gares,s[1])]
                 sorties.extend(gare)
-            
+
         les_sorties = sorties
-        
+        prices = prix 
         if cout_t < min_cout :
             min_cout = cout_t
             x = les_sorties
-
+            y = prices
 
     economie = round(float(dp[nom_gare(tab_ord_gares,i)][index_gare(df,nom_gare(tab_ord_gares,j))]) - min_cout,2)          
     
     
-    return "Si vous sortez aux gares : (" + ','.join(x) + "), votre trajet vous coutera " + str(round(min_cout,2)) + " €. Vous aurez ainsi fait une economie de " + str(economie) + " € sur le coût des péages." 
+    return [x,y,round(min_cout,2),economie]
 
 
-
+#%%
+trajet = Le_Trajet(tab_algo(3,15))
+départ = 0
+arrivée = len(trajet)-1
+noeuds = 3
+cout_minimum_tuple(départ,arrivée,noeuds,trajet)
 
 # %%
 #Renvoi le parcours le moins cher pour le trajet de la gare i a j
@@ -451,4 +462,39 @@ chemin_moins_cher(6,7,0)
 chemin_moins_cher(3,15,3)
 
 
+# %%
+def csv(x):
+    
+    valeurs = ["Arret(s) :"]
+    entetes = []
+    for i in range(len(x[0])):
+        valeurs.extend([x[0][i]])
+        entetes.extend(['colonne ' + str(i)])
+
+    
+    
+    val = [valeurs,[u'Prix du trajet minimum',x[2]],[u'Economie',x[3]]]
+
+    f = open('monFichier.csv', 'w')
+    ligneEntete = ";".join(entetes) + "\n"
+    f.write(ligneEntete)
+    for valeur in val:
+        ligne = ";".join(valeur) + "\n"
+        f.write(ligne)
+
+    f.close()
+
+
+# %%
+trajet = Le_Trajet(tab_algo(3,15))
+départ = 0
+arrivée = len(trajet)-1
+noeuds = 3
+
+csv(cout_minimum_tuple(départ,arrivée,noeuds,trajet))
+
+# %%
+delta = pd.read_csv('monFichier.csv',sep = ";")
+# %%
+delta
 # %%
