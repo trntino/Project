@@ -6,7 +6,6 @@ from openrouteservice import convert
 import openrouteservice
 import json
 from ipywidgets import interact
-import time
 import os
 import Algorithme
 #%%
@@ -17,7 +16,6 @@ Coordinate = pd.read_csv('coordonnees_clean.csv')
 Cities = sorted(Coordinate.NOMGARE.unique())
 
 #%%
-start = time.time()
 
 
 def road(DEPART, ARRIVEE):
@@ -111,7 +109,6 @@ def road(DEPART, ARRIVEE):
     else:
         print("Choisissez deux villes différentes")
 
-end = time.time()
 
 
 interact(road, DEPART=Cities, ARRIVEE=Cities)
