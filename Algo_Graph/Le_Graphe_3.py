@@ -3,23 +3,30 @@ import openrouteservice as ors
 from openrouteservice import convert
 client = ors.Client(key='5b3ce3597851110001cf6248ec32a01981c344289c76bd7dbc72c78d')
 import folium
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from ipywidgets import widgets, interact, interactive, fixed , interact_manual
 
+from download import download  # download data / avoid re-downloading
+from IPython import get_ipython
 
+pd.options.display.max_rows = 8
 
 #%%
 #Importation du tableau des coordonnées des gares de péages
-df = pd.read_csv("coordonnees.csv", sep=",")
+df = pd.read_csv("coordonnees_clean.csv", sep=",")
 
 #%%
 #Importation du tableau des prix entre chaque gares de péages
-dp = pd.read_csv("price.csv", sep=";")
+dp = pd.read_csv("prices_clean.csv", sep=",")
 
 
 #%%
 #Fonction qui renvoi le nom de la i_eme gare de péage 
 def nom_gare(df,i):
-    if isinstance(i,int)== True and 0<=i<=42:
+    if isinstance(i,int)== True and 0<=i<=35:
         
         return str(df["NOMGARE"][i])  
     
@@ -74,5 +81,38 @@ class graphique:
 graphique.graph_rang(3,16,df)
 
 
+
+# %%
+graphique.distance(3,16,df)
+
+
+#%%
+
+def prices_distribution(i,j,bw):
+    
+    n_bins = 24
+    alpha = 0.25
+    density = False
+
+    vector = []  
+    for k in range(j-1):
+        vector.extend([float(dp[nom_gare(df,i+k)][i+k+1])/float(graphique.distance(i+k,i+k+1,df))])
+    A = np.asarray(vector)
+
+    sns.kdeplot(A, bw_adjust=bw, shade=True, cut=0)
+    plt.xlabel("Prix/km")
+    plt.ylabel("Niveau de densité")
+    plt.tight_layout()
+    plt.show()
+    
+    fig, ax = plt.subplots(1, 1, figsize=(5, 5))
+    ax.hist(A, density=density, bins=n_bins, alpha=alpha)  # standardization
+    plt.xlabel("Prix/km")
+    plt.ylabel("Niveau de densité")
+    plt.tight_layout()
+    plt.show()
+    
+#%%
+prices_distribution(3,19,0.5)
 
 # %%
