@@ -241,7 +241,6 @@ def tab_algo(i,j):
 tab_algo(3,35)
 
 
-
 #%%
 def index_gare(dataframe,gare):
     data_gare = dataframe[dataframe["NOMGARE"]==gare]
@@ -398,8 +397,7 @@ def cout_minimum_tuple(i,j,k,tab_ord_gares) :
     economie = round(float(dp[nom_gare(tab_ord_gares,i)][index_gare(df,nom_gare(tab_ord_gares,j))]) - min_cout,2)          
     return "Si vous sortez aux gares : (" + ','.join(x) + "), votre trajet vous coutera " + str(round(min_cout,2)) + " €. Vous aurez ainsi fait une economie de " + str(economie) + " € sur le coût des péages." 
 
-
-
+#%%
 
 # %%
 #Renvoi le parcours le moins cher pour le trajet de la gare i a j
