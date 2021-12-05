@@ -15,13 +15,12 @@ pd.options.display.max_rows = 8
 #%%
 #Reading the file as a `pandas` dataframe:
 df = pd.read_csv('gares-peage-2019.csv', sep=";")
-df
 
 #%%
 #Extraction des données relatives aux autoroutes A9,A709,A61,A62,A75 et A66
 data_route=df[(df.route=="A0009") | (df.route=="A0061") | (df.route=="A0062") | (df.route=="A0066") | (df.route=="A0075") | (df.route=="A0709")]
 data_route = data_route.reset_index()
-data_route
+data_route = data_route[['route',' Nom gare ','x','y']]
 
 # %%
 # Transformation des coordonéées Lambert93 en coordonnées GPS
@@ -52,8 +51,5 @@ for i in range (len(GPS)):
     r = requests.get(f"http://router.project-osrm.org/route/v1/car/{x},{y};{x1},{y1}?overview=false""")
     routes = json.loads(r.content)
     route_1 = routes.get("routes")[0]
-    dist.append(round(route_1['distance']/1000))
+    dist.append(route_1['distance']/1000)
 print(dist)
-
-
-# %%
