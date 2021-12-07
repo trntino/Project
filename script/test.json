@@ -1,0 +1,137 @@
+{
+    "bbox": [
+        2.935856,
+        42.93908,
+        4.122646,
+        43.704276
+    ],
+    "metadata": {
+        "attribution": "openrouteservice.org | OpenStreetMap contributors",
+        "engine": {
+            "build_date": "2021-07-05T10:57:48Z",
+            "graph_date": "2021-11-18T15:23:41Z",
+            "version": "6.6.1"
+        },
+        "query": {
+            "coordinates": [
+                [
+                    3.992643,
+                    43.654448
+                ],
+                [
+                    2.9698643577185457,
+                    42.93907971549383
+                ]
+            ],
+            "format": "json",
+            "profile": "driving-car"
+        },
+        "service": "routing",
+        "timestamp": 1638807668255
+    },
+    "routes": [
+        {
+            "bbox": [
+                2.935856,
+                42.93908,
+                4.122646,
+                43.704276
+            ],
+            "geometry": "ggmiGayjWmGaMwDgG}GmJaFyFmi@_k@qDgEmFaHoCqEiGyKkEcJ{CoHkCoHwCoJyA{FuAyFm@eD_@kBwB{LIy@UkAwIma@gCaMiC{LoAqFoB{HkBwGe@yAkCuHuBwFgAiCa@aA[{@oCoGuH{QoEoLy@cCaBkF_BoFwA{FsA_GmAsGcA_GqAeJgAmJsDc^sA{Lo@yESyAKm@SqAwAeIkAmG_Sg`AgBiJe@oCa@sCc@{Da@{DUmCQuCKqBEuAMyDIeDAqAKaFQqPQeHU_G[qFk@mGa@oDk@}DaAyFsAcGc@aBmAmE}@oCo@gBmAyCgAeCo@sAgAuBo@oAQw@Yi@q@{AOe@YkAGg@IwA?gEC}@McAWkAIKu@kDWOKe@GWEMKe@BSI]I[Qk@m@}Au@wAUo@CQAMDU@UCWEWKSGI_@OIAMBUJIJGJENCHAFAP@NDZBLDHDFFFHFHBJBL?LCH?VLHHp@lAJb@l@vCRt@@JJd@HVBLLd@JNhAbDD?\\`BD~@Cv@Mr@St@Y|@[x@g@vAa@pAS~@Gx@Bd@H`@Vh@b@ZPD\\A\\A`AG\\@n@HVJn@b@jAfBb@\\dAzBdBfEpArDj@dB`AbDp@hCh@`CjAxF^~Bj@|D`@jDTfC`@vFNzBRzFNfHRpPF|EBnAHfDL~DFtALvBd@`H`@vDd@`E`@nCd@rC|@~EfTrdA|BvLv@`FJr@TzAp@xErA|LvAvNl@jGj@|EtAdLdAnHh@dDb@hCdAjFt@fDZtAxAzF|AnF~CnJdBzE|B~F|DtJbBxDlCtGZv@`@~@x@jBRh@v@nB~BpGjBxFp@~Bx@rC`A~DhA~ExBbK~@lEhCxLvFhYh@`C|@vEX`ArBdL^tBd@hCt@jDjAzEvAjFvAtElAtDvCrH|ArDdBxDtDrHnHrLxB~CvCtDfD|D`KvKv\\x]vFtGlDrEjCtDxC|ElC|EnMlWnDtFZd@pBxC`E`IvElJ|HpPdBjDfClEfEvHxBfDzCzDfCtClChC~DfDfFjDbDfBvDbBhFjBvGdBp@PfEpAzDpAvClAvDlB~EbDrEnD`GzFrJ`KjDxErBzCbCzDnBxCv@lAjHdLpNhTrB|CnAhBbB`CvDvEnBvBFFdBpArDvCrErCxDrBvChAzLbEfFrBhDfBhEfCdCjBfGnFhCrCvCrDbCvDhExHzAdD~AzDbCnHzEjRnCrJzIfXdIrVZ`AnHlU~G~S`IlVjOnc@z@`CtDdKvGzPxJdUdAdC~AzDVn@zB~ErGxNP^pIlRrChGtAvCN\\tB|EnE`K|Pj_@fBlEvAhEnAlEhAtElAjGhA`I`@jEV`DNdDR|FDhIEhF?v@EzFApB?nE@|CFzBHvDDbANlD\\bFVxCh@|ExBrQbGxc@hClQ`B|JpBvJjCzKt@tCv@nCvApEv@rBv@fB|BtExQ`\\xAtBtCpDlDrD^b@p@l@vHxGz@z@bDpD`AxA|BvDlAbCfBxDd@rAp@bB~AbFl@|Bd@lB\\vAr@hEt@nGT|Bb@zHJvC`@zUNnELlBFx@Fx@b@pEZ|BN`A\\vB|@jE`@~Ab@`BnA~Df@tAbAbC|@nB~AbDvBrDzFfJXd@r@jAlHrLvBjD`NrTxCnElCnDlFdGrNrNhCpCjBvBhB~BvB~CdEdH`CnE`Rf^zLdWxB|E~DjJ~DxJb@hAtClHrMb]~A|DjCxFhBhD|BtDhCtDfB|B~BlC|IxIvLvKtDzDdD`EnD`FlCjEjDdGd]xr@fBnDrFzJtEvH~GxJxAhBhL~M`DjDxC`DlFtF|BbCpEjFhA|Af@r@|@rAxBlDbDhG`ChF`@bAv@xBvBvGxAlFjAdFjA|GbAlHn@fGzBhTVdCn@zGlAdL`@fDp@rEr@bErAbHfCbMn@|CnAdGb@nBvDdRp@pDx@nF`@vCZlCZdDNfBRxCN~C\\pLF~EDbC@pARfN\\rWHlEBfAHbEPnEVrERnCb@tEd@vDj@bEfAjGp@|Cx@dDfAzDpAbElDrJxLrZhE~JzHzPjFtKjHhNpPf[vEvJtAdDp@fBlBvFjAjEbAbEx@zDx@nEj@tDRrAnAzJb@pDjAhIf@xCl@|Ch@fCdBfHpEpPhAnDp@pBd@lAhAnChA~B|AvC`GpKjBtDtBvEvC`IpAfEx@|Cx@fDvApHTrAXnBVpBp@bGv@fKl@pKXvFd@fJvAhTX`DZpCt@dFr@xDDRf@tBlArEhAjDhCdGfC~EdA~AxCbEfIrJdZf[vHfI`H|GlDxC`D`CdEjC`MjH|CvBxBbBfB`BdBdBpBbCpAhBjBtCnAvBtApC`AxBdBjEbEpKhAbDdAhDn@fCPr@r@bDz@|EbAdIr@vH~Dld@nAnKnAdJdB|KzDbVd@jCzBvKdAjEjAhE|@xCjC~HrD`KxRlj@`CpH~CrKjCfKzCdNlAbGvAvHnA`I`AxGv@xFp@fGxCtZj@nG^pDnAhKh@bEf@vCrBnKtAvFxArF`BdFfBbFbEnJrCxFfPb[jC`FbB~C~EbJ`CrErEzIhCbFjArBpBlDpCpEtA~BbDvEpBpC^f@|CdE`KdNpD|E~B~CrFjHp@z@dB`CrCxD~B|C`@h@x@lAfBfCx@tAdBfD`DfG~@lB|@xBbClGZz@n@pBp@zBh@rBRv@r@zC~@hElAxGZnB\\fCP~ANvAZbDp@dJPtDLrDH`FFdF@zHCzGE`Ig@~h@AlGBhHBnBDzADjB\\tHPxCThDPhBx@jIXpBPtA~@zFh@~Ct@dDbArEh@nBn@hCtBvGfBbFhGdP|Qxd@~DnKdAnCf@nAj@`BtChIjBfGtB|HbBhHxBjLt@~Et@vFj@|El@vG|@vNRpEV~JJhJJhVV~j@D|DFfEX~HPzCb@rFJnA`@pDVnBf@dDbAvFdAdFfA`EvBbHx@|BtAjDbA|BbC~EXh@xBpD~CvE`ArAj@r@x@`AdAjAdDnD`DdDbBdB`C~BdFpFvDrElCrD`EvG`CrEpCtGrBxFnAdEz@dDxAxGfAtF|@lFlDhWzDrXh@rD~Ez]lErZv@lFZvBVlBt@bF~BfOrAhHtAxGL`AfAtDnCfJp@pBrAjDj@~AfAjCvD~HrBvDjD`GzF`JxEtHrB`DzBnDxG`KfKdPtD|FnDvFb@r@xFzIjDnFzCvE~M`TpFrIjAfBd@t@rHrLjHnLhMxTtAnCtEhKpB~EtBtFnApDfDnKlBdHbAtDvAnGr@bDtClObBtLz@vGnAjMf@hG`AhNXpERhD^zGPnCrAfTLhBPvB~@fKFn@b@rDZxBr@tFr@lE`BjJjB`JbC`KxBzHjClI~BpG|A|DpDpIlB`EhC`FnCxElBbD~D`GdDnEfGtHlFtFhF~E|DfDxErDxCpBlEpCtIvEpFhCdF~BjN~FbN`GnF`CpFjCbFjCzEnChG~DbGjEpGpFzArAfB`B~@`AvEdFfGjHdAvAdAtAd@p@`CbDxEfHdEtGhKtPpGdKfD`FrD~EbD`ExDvEpGjHhDvDxEjF~KxLxKrL~BhC~L`NvKtLtDlEfFzGbElG~AnC|AnCbC|EhCvFnCzGpCbIfAlDhCrJfArEfAlFdA`Gx@fFt@`Gx@rHZrDJfAPdCl@fJjEtx@r@fJXzCdAvIx@`Fr@nDdAzEjBtGfAlDpAjDtB~E|A`DbB~CpBdDpBrC`C|CdCtCtCtC|GnFrD~BdB~@vFlCtEfB|EdBlBr@nBn@vHnC~CrAtCrAhBbAf@VnCdBxB|AzBhB~BtBrDvDrA|AjEvElEpEpDnD|ZlXhDdDdDfDhG~GdGpHnE`GbEfGvF`JrC`FvFtKhCnFfCzFrB`FhCzGzAhEd@nA^fA~BlHtDnMp@hC^xAxAdGtAbGjAfF|AtGnChKnB|G^jAvBzGtA~DbApCrApD`@hAbBjEr@nBnAlDdA|CtBnGt@zBd@zAtAzErA|Ef@tBr@zC`AjE~AlHtAfHh@dCdN|q@nFnXXxAjH~]J`@hGh[lHl^ZrAd@lBf@hBp@tBt@vB|AvDzA~C~AvCrA`Cv@nA~BnDpAfBnCnDhAtA|AbBhCjCzAxAbElDfEdDfCdBnBrAbAn@vAz@`DpB~BnA~BjAdD`BhF~BxD~AnCfAjBr@HDlQtGvAh@`FnBhEjB~DvBhFnD~CdCxChCzDxDzChDjEtFbE~Fnb@rn@|DjFjBzBxDbEpBdB~BdB~BvAdBz@pBx@lCz@bDv@tEbAtEjArDpAvClAlB`A`EfCtAbArCzB`G|ExKjJ|HpFjFlDlO|I~DbCxA`AxEtD~BvB~M~MzCpC|C`C~B`BpGnD~DfBtDzA`ExAdCt@rCp@bEr@|Db@lQnA|D\\dFt@lGvAnDhArJnDfErAnBd@tB^vCZ|CJfD?`DShCWhCe@bPiDrGmAlDg@jDSvCElCBbBL|@NtBXvFdAfDh@rDf@vBLdC@jCG`DUbGw@pTkDzCg@TElMqBbGeA~D_AbF{AzGqCdGkD~DuCrAkAvBkBhBeBnByBpBcCnBoCfLyPrAcBX]|AcBRSrBiB`CiBvBmA~BiAhBq@lBm@lBc@~Ba@tEa@hGOvAAbGFfFLh@BfO`@pFNjVl@|Pf@lHNzGFvA?vAAzAErF[v@MxAQ^GzA[jFuAhDsApAm@tAu@~ByApBwAlD}ChBkB|AmBdCeD`CmDnPkWlBqCfCcDdCqCzAuAfBwAdEsChBaAxBeAjDqAxEyArKeDb@I`KaDfJmDfEgB`EqBzQkJfEsBfEcB|Bo@~Be@fBUdCSrBIrB@jABlAHtBTrB^`Dx@`DjAxFvCbEhCrKdHvDtBjClAvBx@hFvAxEv@pBP`DLhC@jCEdCKlCQrD]hLqAnI_AxS{BhKq@~BOrGQvJKfE@tGHfBDnOj@jBJt@F|E\\hIb@dFVTB",
+            "segments": [
+                {
+                    "distance": 153453.2,
+                    "duration": 5097.2,
+                    "steps": [
+                        {
+                            "distance": 11382.6,
+                            "duration": 379.6,
+                            "instruction": "Head northeast on La Languedocienne, A 9",
+                            "name": "La Languedocienne, A 9",
+                            "type": 11,
+                            "way_points": [
+                                0,
+                                84
+                            ]
+                        },
+                        {
+                            "distance": 447.3,
+                            "duration": 37.6,
+                            "instruction": "Keep right",
+                            "name": "-",
+                            "type": 13,
+                            "way_points": [
+                                84,
+                                97
+                            ]
+                        },
+                        {
+                            "distance": 247.2,
+                            "duration": 31.6,
+                            "instruction": "Keep left",
+                            "name": "-",
+                            "type": 12,
+                            "way_points": [
+                                97,
+                                111
+                            ]
+                        },
+                        {
+                            "distance": 387.2,
+                            "duration": 54.6,
+                            "exit_number": 6,
+                            "instruction": "Enter the roundabout and take the 6th exit",
+                            "name": "-",
+                            "type": 7,
+                            "way_points": [
+                                111,
+                                145
+                            ]
+                        },
+                        {
+                            "distance": 142.3,
+                            "duration": 27.0,
+                            "instruction": "Keep right",
+                            "name": "-",
+                            "type": 13,
+                            "way_points": [
+                                145,
+                                152
+                            ]
+                        },
+                        {
+                            "distance": 140846.6,
+                            "duration": 4566.8,
+                            "instruction": "Turn left",
+                            "name": "-",
+                            "type": 0,
+                            "way_points": [
+                                152,
+                                1285
+                            ]
+                        },
+                        {
+                            "distance": 0.0,
+                            "duration": 0.0,
+                            "instruction": "Arrive at your destination, straight ahead",
+                            "name": "-",
+                            "type": 10,
+                            "way_points": [
+                                1285,
+                                1285
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "summary": {
+                "distance": 153453.2,
+                "duration": 5097.2
+            },
+            "way_points": [
+                0,
+                1285
+            ]
+        }
+    ]
+}
