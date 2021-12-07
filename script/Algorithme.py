@@ -1,11 +1,20 @@
 #%%
 import numpy as np
 import pandas as pd
+from download import download
+import os
 
 #%%
-df = pd.read_csv('coordonnees_clean.csv',sep=",")
-dp = pd.read_csv('prices_clean.csv',sep=",")
 
+ur1 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/coordonnees_clean.csv'
+path = os.path.join(os.getcwd(),'coordonnees_clean.csv')
+download(ur1, path, replace=True)
+df = pd.read_csv('./coordonnees_clean.csv')
+
+ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/Distribution_des_Prix/prices_clean.csv'
+path = os.path.join(os.getcwd(),'prices_clean.csv')
+download(ur2, path, replace=True)
+dp = pd.read_csv('./prices_clean.csv')
 #%%
 #Partitionnement des routes
 p1 = df.iloc[0:10,:]
@@ -446,5 +455,13 @@ chemin_moins_cher(6,7,0)
 #%%
 chemin_moins_cher(3,15,3)
 
+
+# %%
+
+# %%
+
+# %%
+
+# %%
 
 # %%

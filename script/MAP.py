@@ -7,12 +7,20 @@ import openrouteservice
 import json
 from ipywidgets import interact
 import os
+from download import download
 
 from pandas.core.indexes.base import Index
-#from Algorithme import nb_de_gare_sur_trajet
+
 #%% Dataframe of the prices and the GPS coordinates of th cities
-price = pd.read_csv('prices_clean.csv')
-Coordinate = pd.read_csv('coordonnees_clean.csv')
+ur1 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/coordonnees_clean.csv'
+path = os.path.join(os.getcwd(),'coordonnees_clean.csv')
+download(ur1, path, replace=True)
+Coordinate = pd.read_csv('./coordonnees_clean.csv')
+
+ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/Distribution_des_Prix/prices_clean.csv'
+path = os.path.join(os.getcwd(),'prices_clean.csv')
+download(ur2, path, replace=True)
+price = pd.read_csv('./prices_clean.csv')
 
 #%% Creating a list contains the name of each city in the database
 Cities = Coordinate.NOMGARE.unique()
@@ -27,7 +35,7 @@ class map:
         if Cities[k] == Nom:
             return k
 
-    def road(DEPART, ARRIVEE, Nb_sorties):
+    def road(DEPART, ARRIVEE):
         i = Coordinate[Coordinate['NOMGARE'] == DEPART].index[0]
         j = Coordinate[Coordinate['NOMGARE'] == ARRIVEE].index[0]
 
@@ -112,16 +120,9 @@ class map:
         else:
             print("Choisissez deux villes différentes")
             
-        Nb_sorties =list(range(index(DEPART),index(ARRIVEE)+1))
-    interact(map.road, DEPART=Cities, ARRIVEE=Cities,NB_sortie= [1,2,3])
+        
+interact(map.road, DEPART=Cities, ARRIVEE=Cities)
 
-
-
-
-#interact(map.road, DEPART=Cities, ARRIVEE=Cities, Nb_sorties)
-
-#=list(range(1,nb_de_gare_sur_trajet(1,7)+1))
-# %%
 
 
 

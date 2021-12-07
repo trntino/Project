@@ -1,10 +1,14 @@
 #%%
 import numpy as np
 import pandas as pd
-
+from download import download
+import os
 #%%
 #Importation du Dataframe des prix entre chaque gares de péages
-dp = pd.read_csv('price.csv', sep=";")
+ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/price.csv'
+path = os.path.join(os.getcwd(),'price.csv')
+download(ur2, path, replace=True)
+dp = pd.read_csv('./price.csv')
 
 #%%
 #DataCleaning sur les colonnes 
