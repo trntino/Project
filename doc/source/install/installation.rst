@@ -1,4 +1,4 @@
-Installation 
+How to install  ASF 
 ==========================================
 
 .. role:: bash(code)
