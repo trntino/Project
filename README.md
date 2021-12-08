@@ -2,7 +2,7 @@
 
 <center>
 
-![visualisation](visualisation/image.png)
+![visualisation](visualisation/im.png)
 
 </center>
 
