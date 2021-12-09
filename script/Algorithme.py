@@ -3,6 +3,9 @@ import numpy as np
 import pandas as pd
 from download import download
 import os
+from ipywidgets import interact
+
+
 
 #%%
 
@@ -15,6 +18,9 @@ ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/Distribution_des
 path = os.path.join(os.getcwd(),'prices_clean.csv')
 download(ur2, path, replace=True)
 dp = pd.read_csv('./prices_clean.csv')
+
+Cities = df.NOMGARE.unique()
+
 #%%
 #Partitionnement des routes
 p1 = df.iloc[0:10,:]
@@ -404,23 +410,23 @@ def cout_minimum_tuple(i,j,k,tab_ord_gares) :
 
 
     economie = round(float(dp[nom_gare(tab_ord_gares,i)][index_gare(df,nom_gare(tab_ord_gares,j))]) - min_cout,2)          
-    return "Si vous sortez aux gares : (" + ','.join(x) + "), votre trajet vous coutera " + str(round(min_cout,2)) + " €. Vous aurez ainsi fait une economie de " + str(economie) + " € sur le coût des péages." 
+    print( "Si vous sortez aux gares :\n(" + ','.join(x) + "), votre trajet vous coutera " + str(round(min_cout,2)) + " €.\nVous aurez ainsi fait une economie de " + str(economie) + " € sur le coût des péages." )
 
 #%%
 
 # %%
 #Renvoi le parcours le moins cher pour le trajet de la gare i a j
-def chemin_moins_cher(i,j,k):
-    
-    nb_de_noeuds_possible = nb_de_gare_sur_trajet(i,j)
-    nb_de_noeuds_souhaite = k
+
+def chemin_moins_cher(Depart,arrivee,Nb_sortie):
+    nb_de_noeuds_possible = nb_de_gare_sur_trajet(Depart,arrivee)
+    nb_de_noeuds_souhaite = Nb_sortie
 
     if nb_de_noeuds_possible  < nb_de_noeuds_souhaite :
         return "Choisissez un nombre de noeuds inferieur ou egal a : " + str(nb_de_noeuds_possible) 
 
     else :
         
-        data = tab_algo(i,j)
+        data = tab_algo(Depart,arrivee)
         trajet = Le_Trajet(data)
         
         depart_index = 0
@@ -435,8 +441,12 @@ def chemin_moins_cher(i,j,k):
         else :
             return cout_minimum_tuple(depart_index,arrivee_index,nb_de_noeuds_souhaite,trajet)
 
+
 # %%
+interact(chemin_moins_cher, Depart=list(range(0,36)),arrivee=list(range(0,36)),Nb_sortie=list(range(0,22)))
+#%%
 chemin_moins_cher(3,23,1)
+
 # %%
 chemin_moins_cher(3,9,0)
 # %%
