@@ -17,9 +17,9 @@ Install from
 ---------------------------------------------------------------------
 
 
-.. code-block:: bash
+.. code-block:: anaconda prompt or bash
 
-    $ pip install -i
+    $ pip install deloqv
 
 
 Requirements
