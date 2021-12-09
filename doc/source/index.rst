@@ -9,6 +9,11 @@ Welcome to ASF's documentation!
 This package was created as part of the software development course. The objective is to explain the operation of this package and the functions it uses.
 
 
+.. toctree::
+   :maxdepth: 2
+   :Caption: Installation
+
+   install/installation
 
 
 .. toctree::
