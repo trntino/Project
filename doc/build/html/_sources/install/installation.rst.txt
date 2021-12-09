@@ -19,7 +19,7 @@ Install from
 
 .. code-block:: bash
 
-    $ pip install -i
+    $ pip install deloqv
 
 
 Requirements
