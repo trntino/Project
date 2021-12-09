@@ -17,7 +17,7 @@ Install from
 ---------------------------------------------------------------------
 
 
-.. code-block:: anaconda prompt or bash
+.. code-block:: bash
 
     $ pip install deloqv
 
