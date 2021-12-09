@@ -17,7 +17,7 @@ path = os.path.join(os.getcwd(),'coordonnees_clean.csv')
 download(ur1, path, replace=True)
 Coordinate = pd.read_csv('./coordonnees_clean.csv')
 
-ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/Distribution_des_Prix/prices_clean.csv'
+ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/prices_clean.csv'
 path = os.path.join(os.getcwd(),'prices_clean.csv')
 download(ur2, path, replace=True)
 price = pd.read_csv('./prices_clean.csv')
