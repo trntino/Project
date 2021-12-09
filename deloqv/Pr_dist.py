@@ -1,4 +1,3 @@
-
 #%%
 import openrouteservice as ors
 from openrouteservice import convert
@@ -19,10 +18,19 @@ pd.options.display.max_rows = 8
 
 #%%
 #Importation du tableau des coordonnées des gares de péages
-df = pd.read_csv("coordonnees_clean.csv", sep=",")
+
+ur1 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/coordonnees_clean.csv'
+path = os.path.join(os.getcwd(),'coordonnees_clean.csv')
+download(ur1, path, replace=True)
+df = pd.read_csv('./coordonnees_clean.csv')
 
 #Importation du tableau des prix entre chaque gares de péages
-dp = pd.read_csv("prices_clean.csv", sep=",")
+
+ur2 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/prices_clean.csv'
+path = os.path.join(os.getcwd(),'prices_clean.csv')
+download(ur2, path, replace=True)
+dp = pd.read_csv('./prices_clean.csv')
+Cities = df.NOMGARE.unique()
 
 
 #%%
@@ -52,9 +60,12 @@ def prices_distribution(i,j,bw):
     density = False
 
     vector = []  
+    noms = []
     for k in range(j-1):
         vector.extend([float(dp[nom_gare(df,i+k)][i+k+1])/float(distance(i+k,i+k+1,df))])
+        noms.extend(nom_gare(df,i+k))
     A = np.asarray(vector)
+    noms.extend(nom_gare(df,j))
 
     sns.kdeplot(A, bw_adjust=bw, shade=True, cut=0)
     plt.title("Distribution des prix entre " + str(nom_gare(df,i)) + " et " + str(nom_gare(df,j)))
@@ -72,6 +83,12 @@ def prices_distribution(i,j,bw):
     plt.show()
     
 #%%
-prices_distribution(3,19,0.5)
+prices_distribution(3,9,0.5)
+
+
+
+# %%
+
+# %%
 
 # %%
