@@ -6,6 +6,8 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
+from download import download
+import os
 import osmnx as ox
 import pandas as pd
 from shapely import geometry
@@ -14,7 +16,10 @@ pd.options.display.max_rows = 8
 
 #%%
 #Reading the file as a `pandas` dataframe:
-df = pd.read_csv('gares-peage-2019.csv', sep=";")
+ur1 = 'https://raw.githubusercontent.com/ELKHMISSI/Project/main/data/gares-peage-2019.csv'
+path = os.path.join(os.getcwd(),'gares-peage-2019.csv')
+download(ur1, path, replace=True)
+df = pd.read_csv('./gares-peage-2019.csv')
 
 #%%
 #Extraction des données relatives aux autoroutes A9,A709,A61,A62,A75 et A66
