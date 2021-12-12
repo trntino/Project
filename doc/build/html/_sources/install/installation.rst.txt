@@ -15,9 +15,10 @@ To compile the ``script.py`` file you can clone the git repository from a termin
 
 Install from
 ---------------------------------------------------------------------
+   $ pip install deloqv
 
 
-.. code-block:: bash
+.. code-block:: terminal anaconda prompt
 
     $ pip install deloqv
 
@@ -36,7 +37,7 @@ The ``requirements.txt`` file lists all necessary packages.
     matplotlib==3.3.2
     numpy==1.19.2
     ipython==7.22.0
-    download
+    
     
 
 
