@@ -15,6 +15,7 @@ To compile the ``script.py`` file you can clone the git repository from a termin
 
 Install from
 ---------------------------------------------------------------------
+   $ pip install deloqv
 
 
 .. code-block:: terminal anaconda prompt
