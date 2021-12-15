@@ -23,6 +23,18 @@ This package was created as part of the software development course. The objecti
    Problem/objectif
 
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Creation de la Map
+   
+   deloqqv/del
+
+
+
+
+
+
 .. toctree::
    :maxdepth: 2
    :Caption: Contacts and sources
